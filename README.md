@@ -5,8 +5,15 @@ Source data for [Historical Advisory Committee](https://history.state.gov/about/
 ## Build
 
 1. Single `xar` file: The `collection.xconf` will only contain the index, not any triggers!
+
     ```shell
     ant
+    ```
+
+    1. Since Releases have been automated when building locally you might want to supply your own version number (e.g. `X.X.X`) like this:
+
+    ```shell
+    ant -Dapp.version=X.X.X
     ```
 
 ## Release

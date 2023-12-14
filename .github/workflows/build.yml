@@ -44,15 +44,27 @@ jobs:
           java-version: ${{ matrix.java-version }}
       - run: ant
 
-      # Test
+      # Install
       - name: Start exist-ci containers
         run: |
           docker run -dit -p 8080:8080 -v ${{ github.workspace }}/build:/exist/autodeploy \
           --name exist --rm --health-interval=2s --health-start-period=4s \
           duncdrum/existdb:${{ matrix.exist-version }}
-          sleep 10s   
+          sleep 10s
+
+      # Test       
       - name: Run test
         run: bats --tap test/*.bats
+
+      # Lint commit messages
+      - name: lint commit message
+        uses: wagoid/commitlint-github-action@v5
+        with:
+          commitDepth: 2
+
+
+
+
   release:
     name: Release
     runs-on: ubuntu-latest
@@ -77,4 +89,7 @@ jobs:
       - name: Perform Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLIC_REPO: ${{ secrets.PUBLIC_REPO }}
         run: npx semantic-release
+        # TODO(DP): 
+        #   - add secrets to github
