@@ -1,4 +1,5 @@
 # Historical Advisory Committee
+[![exist-db CI](https://github.com/HistoryAtState/hac/actions/workflows/build.yml/badge.svg)](https://github.com/HistoryAtState/hac/actions/workflows/build.yml)
 
 Source data for [Historical Advisory Committee](https://history.state.gov/about/hac)
 

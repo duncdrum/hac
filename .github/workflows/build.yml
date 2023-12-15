@@ -59,11 +59,6 @@ jobs:
       # Lint commit messages
       - name: lint commit message
         uses: wagoid/commitlint-github-action@v5
-        with:
-          commitDepth: 2
-
-
-
 
   release:
     name: Release
@@ -72,13 +67,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Build Expath Package
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: 11
-      - run: ant    
+        uses: actions/checkout@v4 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -93,3 +82,4 @@ jobs:
         run: npx semantic-release
         # TODO(DP): 
         #   - add secrets to github
+        #   - publish to public repo?
