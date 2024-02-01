@@ -21,7 +21,7 @@ Source data for [Historical Advisory Committee](https://history.state.gov/about/
 
 Releases for this data package are automated. Any commit to the `master`` branch will trigger the release automation.
 
-All commit message must conform to [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) to determine semantic versioning of releases, please adhere to these conventions, like so:
+All commit messages must conform to [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) to determine semantic versioning of releases, please adhere to these conventions, like so:
 
 | Commit message  | Release type |
 |-----------------|--------------|
